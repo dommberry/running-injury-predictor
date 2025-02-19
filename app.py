@@ -1,9 +1,10 @@
 import streamlit as st
 import pickle
 import numpy as np
-
+import os
 # Load trained model
-model = pickle.load(open("injury_model.pkl", "rb"))
+model_path = os.path.join(os.path.dirname(__file__), "injury_model.pkl")
+model = pickle.load(open(model_path, "rb"))
 
 # UI Layout
 st.title("🏃 Running Injury Predictor")
